@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Send message to discord
-        uses: ./ # Uses an action in the root directory
+        uses: Sniddl/discord-commits@v1.3
         with:
           webhook: ${{ secrets.DISCORD }}
           message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
